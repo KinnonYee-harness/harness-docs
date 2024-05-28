@@ -31,10 +31,10 @@ type: kubernetes.io/dockercfg
 ---
 {{- end}}
 
-apiVersion: apps/v1
+apiVersion: apps/v
 kind: Deployment
-metadata:
-  name: {{.Values.name}}-deployment
+  metadata:
+    name: {{.Values.name}}-deployment
 spec:
   replicas: {{int .Values.replicas}}
   selector:
@@ -50,13 +50,13 @@ spec:
       - name: {{.Values.name}}-dockercfg
       {{- end}}
       containers:
-      - name: {{.Values.name}} 3425
+      - name: {{.Values.name}}
         image: {{.Values.image}}
         {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
         {{- if .Values.env.config}}
         - configMapRef:
-            name: {{.Values.name}}
+            name: {{.Values.name}
         {{- end}}
         {{- if .Values.env.secrets}}
         - secretRef:
