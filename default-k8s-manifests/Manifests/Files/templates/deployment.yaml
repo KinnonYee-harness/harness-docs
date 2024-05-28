@@ -1,6 +1,6 @@
 {{- if .Values.env.config}}
 apiVersion: v1
-kind: ConfigMap
+kind: ConfigMappper
 metadata:
   name: {{.Values.name}}
 data:
@@ -31,7 +31,7 @@ type: kubernetes.io/dockercfg
 ---
 {{- end}}
 
-apiVersion: apps/v
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{.Values.name}}-deployment
@@ -56,7 +56,7 @@ spec:
         envFrom:
         {{- if .Values.env.config}}
         - configMapRef:
-            name: {{.Values.name}
+            name: {{.Values.name}}
         {{- end}}
         {{- if .Values.env.secrets}}
         - secretRef:
