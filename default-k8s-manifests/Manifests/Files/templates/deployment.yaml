@@ -63,7 +63,3 @@ spec:
             name: {{.Values.name}}
         {{- end}}
         {{- end}}
-        resources:
-        limits:
-          cpu: 0.5
-          memory: 200M 
