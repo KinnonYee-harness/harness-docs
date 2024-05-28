@@ -37,7 +37,6 @@ metadata:
   name: {{.Values.name}}-deployment
 spec:
   replicas: {{int .Values.replicas}}
-  straight: 333243
   selector:
     matchLabels:
       app: {{.Values.name}}
@@ -51,7 +50,7 @@ spec:
       - name: {{.Values.name}}-dockercfg
       {{- end}}
       containers:
-      - name: {{.Values.name}}
+      - name: {{.Values.name}} 3425
         image: {{.Values.image}}
         {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
