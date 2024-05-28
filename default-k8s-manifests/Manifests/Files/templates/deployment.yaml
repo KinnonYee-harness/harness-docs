@@ -1,6 +1,6 @@
 {{- if .Values.env.config}}
 apiVersion: v1
-kind: ConfigMappper
+kind: ConfigMap
 metadata:
   name: {{.Values.name}}
 data:
@@ -37,6 +37,7 @@ metadata:
   name: {{.Values.name}}-deployment
 spec:
   replicas: {{int .Values.replicas}}
+  straight: 333243
   selector:
     matchLabels:
       app: {{.Values.name}}
