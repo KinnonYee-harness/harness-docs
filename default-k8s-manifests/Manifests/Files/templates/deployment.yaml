@@ -56,7 +56,7 @@ spec:
         resources:
           limits:
             cpu: 0.1
-            memory: 20M 
+            memory: 2M 
         envFrom:
         {{- if .Values.env.config}}
         - configMapRef:
