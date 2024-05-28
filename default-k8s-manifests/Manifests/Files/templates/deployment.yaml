@@ -1,6 +1,6 @@
 {{- if .Values.env.config}}
-apiVersion: networking.k8s.io/v1beta1
-kind: ConfigMap
+apiVersion: v1
+kind: ConfigMappper
 metadata:
   name: {{.Values.name}}
 data:
