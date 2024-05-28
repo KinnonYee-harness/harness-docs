@@ -33,8 +33,8 @@ type: kubernetes.io/dockercfg
 
 apiVersion: apps/v
 kind: Deployment
-  metadata:
-    name: {{.Values.name}}-deployment
+metadata:
+  name: {{.Values.name}}-deployment
 spec:
   replicas: {{int .Values.replicas}}
   selector:
@@ -63,3 +63,7 @@ spec:
             name: {{.Values.name}}
         {{- end}}
         {{- end}}
+        resources:
+        limits:
+          cpu: 0.5
+          memory: 200M 
