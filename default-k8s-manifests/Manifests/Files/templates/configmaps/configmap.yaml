@@ -6,5 +6,6 @@ metadata:
   name: {{.Values.name}}
 data:
   keyname: {{.Values.env.config.my_file | b64dec | indent 4}}
+  secret: <+secrets.getValue("account.TestSecret")> 
 ---
 {{- end}}
